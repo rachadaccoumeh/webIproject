@@ -1,0 +1,905 @@
+<!--
+____/\\\\\\\\\_________/\\\\\\\\\___________/\\\\\\\\\__/\\\________/\\\_____/\\\\\\\\\_____/\\\\\\\\\\\\____
+ __/\\\///////\\\_____/\\\\\\\\\\\\\______/\\\////////__\/\\\_______\/\\\___/\\\\\\\\\\\\\__\/\\\////////\\\__
+  _\/\\\_____\/\\\____/\\\/////////\\\___/\\\/___________\/\\\_______\/\\\__/\\\/////////\\\_\/\\\______\//\\\_
+   _\/\\\\\\\\\\\/____\/\\\_______\/\\\__/\\\_____________\/\\\\\\\\\\\\\\\_\/\\\_______\/\\\_\/\\\_______\/\\\_
+    _\/\\\//////\\\____\/\\\\\\\\\\\\\\\_\/\\\_____________\/\\\/////////\\\_\/\\\\\\\\\\\\\\\_\/\\\_______\/\\\_
+     _\/\\\____\//\\\___\/\\\/////////\\\_\//\\\____________\/\\\_______\/\\\_\/\\\/////////\\\_\/\\\_______\/\\\_
+      _\/\\\_____\//\\\__\/\\\_______\/\\\__\///\\\__________\/\\\_______\/\\\_\/\\\_______\/\\\_\/\\\_______/\\\__
+       _\/\\\______\//\\\_\/\\\_______\/\\\____\////\\\\\\\\\_\/\\\_______\/\\\_\/\\\_______\/\\\_\/\\\\\\\\\\\\/___
+        _\///________\///__\///________\///________\/////////__\///________\///__\///________\///__\////////////_____-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rachad</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /*width: 100%;*/
+
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .containerOut:nth-child(1) {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .containerOut:nth-child(2) {
+            background: url("/storage/home-banners/511823770.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .containerOut:nth-child(3) {
+            background: url("/storage/home-banners/1420829570.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .containerOut:nth-child(4) {
+            background: url("/storage/home-banners/1615247193.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .containerOut:nth-child(5) {
+            background: url("/storage/home-banners/1312173550.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .containerOut:nth-child(6) {
+            background: url("/storage/home-banners/1153540892.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .containerOut:nth-child(7) {
+            background: url("/storage/home-banners/1675452509.jpg") no-repeat fixed center;
+            background-size: cover;
+        }
+
+        .containerOut:nth-child(8) {
+            background: white;
+        }
+
+        .blink {
+            animation-name: fade;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 100%;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 100%;
+            }
+
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 50px;
+            right: 4%;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        #changeColor {
+            animation-name: changeColor, bounce;
+            animation-duration: 20s, 2s;
+            animation-iteration-count: infinite, infinite;
+            animation-timing-function: linear, ease;
+            animation-direction: alternate, normal;
+            width: 100px;
+            height: 100px;
+
+        }
+
+        @keyframes changeColor {
+            0% {
+                background: red;
+            }
+            20% {
+                background: blue;
+            }
+            40% {
+                background: cyan;
+            }
+            60% {
+                background: green;
+            }
+            80% {
+                background: yellow;
+            }
+            100% {
+                background: orange;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0)
+            }
+            10% {
+                transform: translateY(0)
+            }
+            30% {
+                transform: translateY(-25px)
+            }
+            50% {
+                transform: translateY(0)
+            }
+            57% {
+                transform: translateY(-7px)
+            }
+            64% {
+                transform: translateY(0)
+            }
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        .activePage {
+            transform: translateY(0);
+        }
+
+        .up {
+            transform: translateY(-100%);
+            transition-duration: 2s;
+        }
+
+        .down {
+            transition-duration: 0.85s;
+            transform: translateY(100%);
+        }
+
+        ul li label {
+            transition: all 200ms linear;
+            height: 3px;
+            width: 10px;
+            display: block;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        ul li input[type="radio"]:checked + label {
+            transform: scaleY(3);
+        }
+
+        ul li {
+            display: block;
+            margin: 20px;
+        }
+
+        a {
+            transition: color 200ms linear;
+        }
+
+        #contact:before {
+            content: "Contact";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: black;
+            width: 100%;
+            height: 100%;
+            color: black;
+
+            transition: color 200ms linear 100ms, top 200ms ease-in;
+        }
+
+        #contact:hover:before {
+            top: 0;
+            color: white;
+        }
+
+        .socialMedia {
+            padding: 25px 50px;
+        }
+
+        #smallerFont {
+            font-size: 3.5rem;
+        }
+
+
+        .a {
+            stroke-dasharray: 320;
+            stroke-dashoffset: 320;
+            animation-name: a;
+            fill: transparent;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes a {
+            0% {
+                stroke-dashoffset: 0;
+                opacity: 10%;
+            }
+            40% {
+                stroke-dashoffset: 320;
+            }
+            80% {
+                stroke-dashoffset: 640;
+                fill: transparent;
+            }
+            100% {
+                fill: white;
+                stroke-dashoffset: 640;
+                opacity: 100%;
+
+            }
+        }
+
+        .r {
+            stroke-dasharray: 370;
+            stroke-dashoffset: 370;
+            animation-name: r;
+            fill: transparent;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes r {
+            0% {
+                stroke-dashoffset: 370;
+                opacity: 10%;
+            }
+            40% {
+                stroke-dashoffset: 0;
+            }
+            80% {
+                stroke-dashoffset: -370;
+                fill: transparent;
+
+            }
+            100% {
+                fill: white;
+                stroke-dashoffset: -370;
+                opacity: 100%;
+            }
+        }
+
+        .c {
+            stroke-dasharray: 350;
+            stroke-dashoffset: 350;
+            animation-name: c;
+            fill: transparent;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes c {
+            0% {
+                stroke-dashoffset: -350;
+                opacity: 10%;
+            }
+            40% {
+                stroke-dashoffset: 0;
+            }
+            80% {
+                stroke-dashoffset: 350;
+                fill: transparent;
+
+            }
+            100% {
+                fill: white;
+                stroke-dashoffset: 350;
+                opacity: 100%;
+            }
+        }
+
+        .h {
+            stroke-dasharray: 470;
+            stroke-dashoffset: 470;
+            animation-name: h;
+            fill: transparent;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes h {
+            0% {
+                stroke-dashoffset: -940;
+                opacity: 10%;
+            }
+            40% {
+                stroke-dashoffset: -470;
+            }
+            80% {
+                stroke-dashoffset: 0;
+                fill: transparent;
+
+            }
+            100% {
+                fill: white;
+                stroke-dashoffset: 0;
+                opacity: 100%;
+            }
+        }
+
+        .d {
+            stroke-dasharray: 285;
+            stroke-dashoffset: 285;
+            animation-name: d;
+            fill: transparent;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes d {
+            0% {
+                stroke-dashoffset: -285;
+                opacity: 10%;
+            }
+            40% {
+                stroke-dashoffset: 0;
+            }
+            80% {
+                stroke-dashoffset: 285;
+                fill: transparent;
+
+            }
+            100% {
+                fill: white;
+                stroke-dashoffset: 285;
+                opacity: 100%;
+            }
+        }
+
+        @media (max-width: 990px) {
+
+
+            #changeColor {
+                width: 75px;
+                height: 75px;
+            }
+
+            .container p {
+                font-size: 16px;
+            }
+
+            .container strong {
+                font-size: 20px;
+            }
+
+            #smallerFont p {
+                font-size: 23px;
+            }
+
+            .loadingSvg {
+                height: 65px;
+                width: 330px;
+            }
+
+
+
+            .footer p {
+                font-size: 0.75rem;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div id="downMe"
+     style="width: 100%; height: 100vh; position: fixed;top: 0;left: 0; background-color: black; z-index: 103; display: flex; justify-content: center;align-items: center;">
+    <svg class="loadingSvg" style="position: absolute; filter: blur(5px)" width="456.5" height="90"
+         viewBox="0 0 380.9 75.1"
+         xmlns="http://www.w3.org/2000/svg">
+        <g fill="#1A1A1A" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#fff"
+           stroke-width="10" style="stroke:#fff;stroke-width:0.25mm;">
+            <path class="r"
+                  d="M 12.3 74.5 L 0 74.5 L 0 0.7 L 30 0.7 Q 34.1 0.7 37.75 1.65 Q 41.4 2.6 44.25 5.1 A 14.417 14.417 0 0 1 47.008 8.418 Q 47.94 9.933 48.656 11.8 A 24.673 24.673 0 0 1 48.75 12.05 A 22.991 22.991 0 0 1 49.755 15.76 Q 50.118 17.674 50.277 19.916 A 52.286 52.286 0 0 1 50.4 23.6 Q 50.4 27.686 49.793 30.751 A 21.224 21.224 0 0 1 49.3 32.75 A 23.045 23.045 0 0 1 48.291 35.493 Q 47.469 37.335 46.4 38.7 A 14.731 14.731 0 0 1 44.233 40.955 A 12.2 12.2 0 0 1 42.35 42.25 A 32.178 32.178 0 0 1 39.072 43.843 A 27.965 27.965 0 0 1 37.9 44.3 L 52.1 74.5 L 39.6 74.5 L 26.8 46.1 L 23.55 46.1 Q 21.7 46.1 19.7 46.05 Q 17.7 46 15.8 45.95 Q 13.9 45.9 12.3 45.9 L 12.3 74.5 Z M 12.3 11.8 L 12.3 36.2 L 27.9 36.2 A 15.234 15.234 0 0 0 30.187 36.036 A 12.042 12.042 0 0 0 31.9 35.65 Q 33.7 35.1 35.1 33.7 A 7.697 7.697 0 0 0 36.4 31.938 Q 36.835 31.143 37.159 30.179 A 13.404 13.404 0 0 0 37.25 29.9 A 14.275 14.275 0 0 0 37.705 27.915 Q 37.871 26.884 37.944 25.68 A 32.985 32.985 0 0 0 38 23.7 Q 38 20 37.25 17.65 A 10.545 10.545 0 0 0 36.596 16.042 Q 36.15 15.172 35.572 14.524 A 5.852 5.852 0 0 0 35.1 14.05 Q 33.7 12.8 31.85 12.3 Q 30 11.8 27.9 11.8 L 12.3 11.8 Z"
+                  id="0" vector-effect="non-scaling-stroke"/>
+            <path class="a"
+                  d="M 70.1 74.5 L 57.4 74.5 L 81.4 0.7 L 97 0.7 L 121 74.5 L 108.1 74.5 L 102.4 57 L 75.7 57 L 70.1 74.5 Z M 89 11.3 L 78.6 45.9 L 99.4 45.9 L 89 11.3 Z"
+                  id="1" vector-effect="non-scaling-stroke"/>
+            <path class="c"
+                  d="M 176.4 3.2 L 176.4 12.7 Q 174.7 12.3 171.6 11.95 Q 168.6 11.612 164.851 11.366 A 200.165 200.165 0 0 0 164.6 11.35 Q 160.7 11.1 156.5 11.1 Q 152.671 11.1 149.777 11.828 A 17.725 17.725 0 0 0 148.65 12.15 Q 145.4 13.2 143.4 16 A 13 13 0 0 0 142.055 18.438 Q 141.512 19.702 141.098 21.247 A 31.212 31.212 0 0 0 140.5 24 A 51.648 51.648 0 0 0 139.988 27.942 Q 139.6 32.053 139.6 37.5 Q 139.6 45.7 140.45 50.9 A 33.075 33.075 0 0 0 141.115 54.06 Q 141.511 55.548 142.02 56.77 A 13.574 13.574 0 0 0 143.15 58.95 Q 145 61.8 148.25 62.9 Q 150.774 63.754 154.293 63.945 A 38.944 38.944 0 0 0 156.4 64 Q 163.109 64 167.657 63.72 A 92.588 92.588 0 0 0 168.7 63.65 Q 173.5 63.3 176.4 62.9 L 176.4 72.4 Q 173.605 73.199 170.064 73.798 A 78.73 78.73 0 0 1 170.05 73.8 A 88.289 88.289 0 0 1 165.417 74.453 A 105.861 105.861 0 0 1 162.45 74.75 A 93.633 93.633 0 0 1 157.273 75.047 A 116.297 116.297 0 0 1 153.7 75.1 Q 147.2 75.1 142.25 73.6 Q 137.3 72.1 133.95 68.1 A 19.315 19.315 0 0 1 131.5 64.289 Q 129.909 61.094 128.9 56.7 A 56.203 56.203 0 0 1 127.932 51.069 Q 127.2 45.175 127.2 37.3 A 120.933 120.933 0 0 1 127.407 30.004 Q 127.802 23.491 128.95 18.7 Q 130.275 13.172 132.575 9.479 A 18.877 18.877 0 0 1 134.15 7.3 Q 137.6 3.2 142.6 1.6 A 32.521 32.521 0 0 1 148.308 0.352 A 43.991 43.991 0 0 1 154 0 Q 158.4 0 162.55 0.5 A 114.18 114.18 0 0 1 167.267 1.164 A 91.88 91.88 0 0 1 170.25 1.7 A 80.307 80.307 0 0 1 172.779 2.239 Q 174.151 2.556 175.348 2.892 A 43.327 43.327 0 0 1 176.4 3.2 Z"
+                  id="2" vector-effect="non-scaling-stroke"/>
+            <path class="h"
+                  d="M 199.8 74.5 L 187.5 74.5 L 187.5 0.7 L 199.8 0.7 L 199.8 32.6 L 230.9 32.6 L 230.9 0.7 L 243.3 0.7 L 243.3 74.5 L 230.9 74.5 L 230.9 43.7 L 199.8 43.7 L 199.8 74.5 Z"
+                  id="3" vector-effect="non-scaling-stroke"/>
+            <path class="a"
+                  d="M 265.2 74.5 L 252.5 74.5 L 276.5 0.7 L 292.1 0.7 L 316.1 74.5 L 303.2 74.5 L 297.5 57 L 270.8 57 L 265.2 74.5 Z M 284.1 11.3 L 273.7 45.9 L 294.5 45.9 L 284.1 11.3 Z"
+                  id="4" vector-effect="non-scaling-stroke"/>
+            <path class="d"
+                  d="M 355.7 74.5 L 325.2 74.5 L 325.2 0.7 L 355.7 0.7 A 33.661 33.661 0 0 1 360.966 1.089 Q 363.834 1.544 366.212 2.53 A 18.669 18.669 0 0 1 367.75 3.25 Q 372.6 5.8 375.5 10.65 A 30.358 30.358 0 0 1 378.178 16.538 A 41.41 41.41 0 0 1 379.65 22.3 Q 380.9 29.1 380.9 37.6 A 87.922 87.922 0 0 1 380.507 46.175 Q 380.097 50.35 379.259 53.906 A 42.293 42.293 0 0 1 378.1 57.95 A 31.234 31.234 0 0 1 375.363 63.92 A 22.082 22.082 0 0 1 369.7 70.3 A 20.577 20.577 0 0 1 361.144 74.004 A 28.547 28.547 0 0 1 355.7 74.5 Z M 337.5 11.8 L 337.5 63.4 L 354.5 63.4 A 14.042 14.042 0 0 0 358.037 62.978 A 10.054 10.054 0 0 0 362.65 60.4 Q 365.7 57.4 367.15 51.6 A 44.274 44.274 0 0 0 368.115 46.279 Q 368.449 43.572 368.553 40.485 A 85.607 85.607 0 0 0 368.6 37.6 Q 368.6 32.13 368.134 28.007 A 46.519 46.519 0 0 0 367.7 25 A 36.452 36.452 0 0 0 366.987 21.811 Q 366.577 20.319 366.07 19.083 A 15.688 15.688 0 0 0 365.1 17.1 A 11.229 11.229 0 0 0 363.364 14.821 A 8.828 8.828 0 0 0 360.75 13 A 13.021 13.021 0 0 0 357.567 12.047 Q 356.154 11.804 354.551 11.8 A 21.452 21.452 0 0 0 354.5 11.8 L 337.5 11.8 Z"
+                  id="5" vector-effect="non-scaling-stroke"/>
+        </g>
+    </svg>
+    <svg class="loadingSvg" style="position: absolute" width="456.6" height="90" viewBox="0 0 380.9 75.1"
+         xmlns="http://www.w3.org/2000/svg">
+        <g fill="#1A1A1A" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#fff"
+           stroke-width="10" style="stroke:#fff;stroke-width:0.25mm;">
+            <path class="r"
+                  d="M 12.3 74.5 L 0 74.5 L 0 0.7 L 30 0.7 Q 34.1 0.7 37.75 1.65 Q 41.4 2.6 44.25 5.1 A 14.417 14.417 0 0 1 47.008 8.418 Q 47.94 9.933 48.656 11.8 A 24.673 24.673 0 0 1 48.75 12.05 A 22.991 22.991 0 0 1 49.755 15.76 Q 50.118 17.674 50.277 19.916 A 52.286 52.286 0 0 1 50.4 23.6 Q 50.4 27.686 49.793 30.751 A 21.224 21.224 0 0 1 49.3 32.75 A 23.045 23.045 0 0 1 48.291 35.493 Q 47.469 37.335 46.4 38.7 A 14.731 14.731 0 0 1 44.233 40.955 A 12.2 12.2 0 0 1 42.35 42.25 A 32.178 32.178 0 0 1 39.072 43.843 A 27.965 27.965 0 0 1 37.9 44.3 L 52.1 74.5 L 39.6 74.5 L 26.8 46.1 L 23.55 46.1 Q 21.7 46.1 19.7 46.05 Q 17.7 46 15.8 45.95 Q 13.9 45.9 12.3 45.9 L 12.3 74.5 Z M 12.3 11.8 L 12.3 36.2 L 27.9 36.2 A 15.234 15.234 0 0 0 30.187 36.036 A 12.042 12.042 0 0 0 31.9 35.65 Q 33.7 35.1 35.1 33.7 A 7.697 7.697 0 0 0 36.4 31.938 Q 36.835 31.143 37.159 30.179 A 13.404 13.404 0 0 0 37.25 29.9 A 14.275 14.275 0 0 0 37.705 27.915 Q 37.871 26.884 37.944 25.68 A 32.985 32.985 0 0 0 38 23.7 Q 38 20 37.25 17.65 A 10.545 10.545 0 0 0 36.596 16.042 Q 36.15 15.172 35.572 14.524 A 5.852 5.852 0 0 0 35.1 14.05 Q 33.7 12.8 31.85 12.3 Q 30 11.8 27.9 11.8 L 12.3 11.8 Z"
+                  id="0" vector-effect="non-scaling-stroke"/>
+            <path class="a"
+                  d="M 70.1 74.5 L 57.4 74.5 L 81.4 0.7 L 97 0.7 L 121 74.5 L 108.1 74.5 L 102.4 57 L 75.7 57 L 70.1 74.5 Z M 89 11.3 L 78.6 45.9 L 99.4 45.9 L 89 11.3 Z"
+                  id="1" vector-effect="non-scaling-stroke"/>
+            <path class="c"
+                  d="M 176.4 3.2 L 176.4 12.7 Q 174.7 12.3 171.6 11.95 Q 168.6 11.612 164.851 11.366 A 200.165 200.165 0 0 0 164.6 11.35 Q 160.7 11.1 156.5 11.1 Q 152.671 11.1 149.777 11.828 A 17.725 17.725 0 0 0 148.65 12.15 Q 145.4 13.2 143.4 16 A 13 13 0 0 0 142.055 18.438 Q 141.512 19.702 141.098 21.247 A 31.212 31.212 0 0 0 140.5 24 A 51.648 51.648 0 0 0 139.988 27.942 Q 139.6 32.053 139.6 37.5 Q 139.6 45.7 140.45 50.9 A 33.075 33.075 0 0 0 141.115 54.06 Q 141.511 55.548 142.02 56.77 A 13.574 13.574 0 0 0 143.15 58.95 Q 145 61.8 148.25 62.9 Q 150.774 63.754 154.293 63.945 A 38.944 38.944 0 0 0 156.4 64 Q 163.109 64 167.657 63.72 A 92.588 92.588 0 0 0 168.7 63.65 Q 173.5 63.3 176.4 62.9 L 176.4 72.4 Q 173.605 73.199 170.064 73.798 A 78.73 78.73 0 0 1 170.05 73.8 A 88.289 88.289 0 0 1 165.417 74.453 A 105.861 105.861 0 0 1 162.45 74.75 A 93.633 93.633 0 0 1 157.273 75.047 A 116.297 116.297 0 0 1 153.7 75.1 Q 147.2 75.1 142.25 73.6 Q 137.3 72.1 133.95 68.1 A 19.315 19.315 0 0 1 131.5 64.289 Q 129.909 61.094 128.9 56.7 A 56.203 56.203 0 0 1 127.932 51.069 Q 127.2 45.175 127.2 37.3 A 120.933 120.933 0 0 1 127.407 30.004 Q 127.802 23.491 128.95 18.7 Q 130.275 13.172 132.575 9.479 A 18.877 18.877 0 0 1 134.15 7.3 Q 137.6 3.2 142.6 1.6 A 32.521 32.521 0 0 1 148.308 0.352 A 43.991 43.991 0 0 1 154 0 Q 158.4 0 162.55 0.5 A 114.18 114.18 0 0 1 167.267 1.164 A 91.88 91.88 0 0 1 170.25 1.7 A 80.307 80.307 0 0 1 172.779 2.239 Q 174.151 2.556 175.348 2.892 A 43.327 43.327 0 0 1 176.4 3.2 Z"
+                  id="2" vector-effect="non-scaling-stroke"/>
+            <path class="h"
+                  d="M 199.8 74.5 L 187.5 74.5 L 187.5 0.7 L 199.8 0.7 L 199.8 32.6 L 230.9 32.6 L 230.9 0.7 L 243.3 0.7 L 243.3 74.5 L 230.9 74.5 L 230.9 43.7 L 199.8 43.7 L 199.8 74.5 Z"
+                  id="3" vector-effect="non-scaling-stroke"/>
+            <path class="a"
+                  d="M 265.2 74.5 L 252.5 74.5 L 276.5 0.7 L 292.1 0.7 L 316.1 74.5 L 303.2 74.5 L 297.5 57 L 270.8 57 L 265.2 74.5 Z M 284.1 11.3 L 273.7 45.9 L 294.5 45.9 L 284.1 11.3 Z"
+                  id="4" vector-effect="non-scaling-stroke"/>
+            <path class="d"
+                  d="M 355.7 74.5 L 325.2 74.5 L 325.2 0.7 L 355.7 0.7 A 33.661 33.661 0 0 1 360.966 1.089 Q 363.834 1.544 366.212 2.53 A 18.669 18.669 0 0 1 367.75 3.25 Q 372.6 5.8 375.5 10.65 A 30.358 30.358 0 0 1 378.178 16.538 A 41.41 41.41 0 0 1 379.65 22.3 Q 380.9 29.1 380.9 37.6 A 87.922 87.922 0 0 1 380.507 46.175 Q 380.097 50.35 379.259 53.906 A 42.293 42.293 0 0 1 378.1 57.95 A 31.234 31.234 0 0 1 375.363 63.92 A 22.082 22.082 0 0 1 369.7 70.3 A 20.577 20.577 0 0 1 361.144 74.004 A 28.547 28.547 0 0 1 355.7 74.5 Z M 337.5 11.8 L 337.5 63.4 L 354.5 63.4 A 14.042 14.042 0 0 0 358.037 62.978 A 10.054 10.054 0 0 0 362.65 60.4 Q 365.7 57.4 367.15 51.6 A 44.274 44.274 0 0 0 368.115 46.279 Q 368.449 43.572 368.553 40.485 A 85.607 85.607 0 0 0 368.6 37.6 Q 368.6 32.13 368.134 28.007 A 46.519 46.519 0 0 0 367.7 25 A 36.452 36.452 0 0 0 366.987 21.811 Q 366.577 20.319 366.07 19.083 A 15.688 15.688 0 0 0 365.1 17.1 A 11.229 11.229 0 0 0 363.364 14.821 A 8.828 8.828 0 0 0 360.75 13 A 13.021 13.021 0 0 0 357.567 12.047 Q 356.154 11.804 354.551 11.8 A 21.452 21.452 0 0 0 354.5 11.8 L 337.5 11.8 Z"
+                  id="5" vector-effect="non-scaling-stroke"/>
+        </g>
+    </svg>
+</div>
+<script>
+    let loadFinished, timeFinished;
+    window.addEventListener("load", ev => {
+        loadFinished = true;
+        if (timeFinished)
+            document.getElementById("downMe").classList.add("up");
+    });
+    setTimeout(function () {
+        timeFinished = true;
+        if (loadFinished)
+            document.getElementById("downMe").classList.add("up");
+    }, 2200);
+
+</script>
+<header style="width: 100%; position: fixed; z-index: 102;">
+    <nav class="container" id="navigation-fixed-top">
+        <a class="blackMe" href="http://rachad.ml">
+            <h2>RACHAD</h2>
+        </a>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a class="blackMe" href="/work">WORK</a></li>
+            <li class="list-inline-item"><a class="blackMe" href="/agency">AGENCY</a></li>
+            <li class="list-inline-item"><a class="blackMe" href="/what-we-do">WHAT WE DO</a></li>
+            <li class="list-inline-item"><a class="blackMe" href="/solutions">SOLUTIONS</a></li>
+            <li class="list-inline-item"><a class="blackMe" href="/blog">BLOG</a></li>
+            <li class="list-inline-item"><a class="blackMe" style="margin-right: 0" href="/contact">CONTACT</a>
+            </li>
+        </ul>
+        <div id="burger">
+            <span class="burgers top"></span>
+            <span class="burgers middle"></span>
+            <span class="burgers bottom"></span>
+        </div>
+    </nav>
+</header>
+<aside id="navBar">
+    <ul class="list-inline">
+        <li><a class="blackMe" href="/work">WORK</a></li>
+        <li><a class="blackMe" href="/agency">AGENCY</a></li>
+        <li><a class="blackMe" href="/what-we-do">WHAT WE DO</a></li>
+        <li><a class="blackMe" href="/solutions">SOLUTIONS</a></li>
+        <li><a class="blackMe" href="/blog">BLOG</a></li>
+        <li><a class="blackMe" href="/contact">CONTACT</a></li>
+        <li>
+            <div style="display: flex; align-items: center; width: 100%; justify-content: center">
+                <a class="socialMedia" href="https://www.facebook.com/RACHAD" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg style="display: flex; justify-content: center; align-items: center;"
+                         class="position-relative" width="19.281" height="36" viewBox="0 0 19.281 36">
+                        <path d="M19.627,20.25l1-6.515H14.375V9.507c0-1.782.873-3.52,3.673-3.52h2.842V.44A34.658,34.658,0,0,0,15.846,0C10.7,0,7.332,3.12,7.332,8.769v4.965H1.609V20.25H7.332V36h7.043V20.25Z"
+                              transform="translate(-1.609)"></path>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://twitter.com/Rachad" target="_blank" rel="noopener noreferrer">
+                    <svg style="display: flex; justify-content: center; align-items: center;"
+                         class="position-relative" width="36" height="29.239" viewBox="0 0 36 29.239">
+                        <path d="M32.3,10.668c.023.32.023.64.023.959,0,9.754-7.424,20.992-20.992,20.992A20.85,20.85,0,0,1,0,29.307a15.263,15.263,0,0,0,1.782.091,14.776,14.776,0,0,0,9.16-3.152,7.391,7.391,0,0,1-6.9-5.117,9.3,9.3,0,0,0,1.393.114,7.8,7.8,0,0,0,1.942-.251,7.379,7.379,0,0,1-5.916-7.241V13.66A7.431,7.431,0,0,0,4.8,14.6,7.389,7.389,0,0,1,2.513,4.728a20.972,20.972,0,0,0,15.213,7.721,8.329,8.329,0,0,1-.183-1.69A7.385,7.385,0,0,1,30.312,5.711a14.526,14.526,0,0,0,4.683-1.782,7.358,7.358,0,0,1-3.244,4.066A14.791,14.791,0,0,0,36,6.853a15.86,15.86,0,0,1-3.7,3.815Z"
+                              transform="translate(0 -3.381)"></path>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://www.instagram.com/rachad.agency/" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="position-relative" width="33" height="33" viewBox="0 0 33 33">
+                        <g transform="translate(-1.5 -1.5)">
+                            <path d="M10.5,3h15A7.5,7.5,0,0,1,33,10.5v15A7.5,7.5,0,0,1,25.5,33h-15A7.5,7.5,0,0,1,3,25.5v-15A7.5,7.5,0,0,1,10.5,3Z"
+                                  fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="3"></path>
+                            <path d="M24,17.055A6,6,0,1,1,18.945,12,6,6,0,0,1,24,17.055Z" fill="none" stroke="#000"
+                                  stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                            <path d="M26.25,9.75h0" fill="none" stroke="#000" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="3"></path>
+                        </g>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://www.linkedin.com/company/rachad" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="position-relative" width="31.5" height="31.499" viewBox="0 0 31.5 31.499">
+                        <path d="M7.051,31.5H.52V10.47H7.051ZM3.782,7.6A3.8,3.8,0,1,1,7.564,3.783,3.814,3.814,0,0,1,3.782,7.6ZM31.493,31.5H24.976V21.263c0-2.44-.049-5.569-3.4-5.569-3.4,0-3.916,2.651-3.916,5.393V31.5H11.142V10.47h6.263v2.869H17.5a6.862,6.862,0,0,1,6.179-3.4c6.609,0,7.824,4.352,7.824,10.005V31.5Z"
+                              transform="translate(0 -0.001)"></path>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://www.youtube.com/c/rachad" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="position-relative" width="33" height="33" viewBox="-21 -117 682.66672 682">
+                        <path d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0"></path>
+                    </svg>
+                </a>
+
+            </div>
+        </li>
+    </ul>
+</aside>
+<nav style="position: fixed; z-index: 100; width: 28px; top:50%; transform: translateY(-50%); right: 5%">
+    <ul>
+        <li><input id="radio1" onchange="pageIndex=0; update();" name="a" type="radio" checked
+                   style="display: none"><label
+                class="blackLabel"
+                for="radio1"></label></li>
+        <li><input id="radio2" onchange="pageIndex=1; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio2"></label></li>
+        <li><input id="radio3" onchange="pageIndex=2; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio3"></label></li>
+        <li><input id="radio4" onchange="pageIndex=3; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio4"></label></li>
+        <li><input id="radio5" onchange="pageIndex=4; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio5"></label></li>
+        <li><input id="radio6" onchange="pageIndex=5; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio6"></label></li>
+        <li><input id="radio7" onchange="pageIndex=6; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio7"></label></li>
+        <li><input id="radio8" onchange="pageIndex=7; update();" name="a" type="radio" style="display: none"><label
+                class="blackLabel"
+                for="radio8"></label></li>
+    </ul>
+</nav>
+<section class="containerSuper">
+    <div class="containerOut activePage" style="z-index: 1; ">
+        <video poster="/storage/header/poster-1486065545.jpeg" autoplay loop muted
+               preload="metadata" style="display: inline;">
+            <source type="video/mp4" src="/storage/header/287566391.mp4">
+        </video>
+        <div class="container" id="smallerFont"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;
+                color: white; font-weight: 600; line-height: 1.2">
+            <p style="display: inline">
+                Web &amp; Mobile App Development<br>Digital Transformation Company<br>for:
+                <span id="print" style="background: black; color: white"></span><span
+                    style=" font-weight: 600; " id="blink">|</span>
+            </p>
+
+            <div class="text-bottom"
+                 style="position: absolute; bottom: 20px; left: 50%; display: flex; flex-direction: column; transform: translateX(-50%); align-items: center">
+                <small style="font-size: 13px; margin-bottom: 10px">What we do</small>
+                <svg class="d-block mx-auto mt-1" width="11.099" height="6.854" viewBox="0 0 11.099 6.854">
+                    <path d="M6.854,9.795,2.618,5.549,6.854,1.3,5.55,0,0,5.549,5.55,11.1Z"
+                          transform="translate(0 6.854) rotate(-90)" fill="#000000"
+                          style="fill: rgb(255, 255, 255);"></path>
+                </svg>
+            </div>
+            <div class="bottom-right">
+                <div style="border-radius: 41% 59% 47% 53% / 30% 26% 74% 70%;  margin-bottom: 10px; display: flex; align-items: center; justify-content: center"
+                     id="changeColor"><strong style="text-shadow: -5px 5px 8px black">R</strong></div>
+                <small style="font-size: 13px; font-weight: 400">Digital is Magical!</small>
+            </div>
+        </div>
+    </div>
+    <div class="containerOut down" style="z-index: 2;">
+        <div class="container"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;">
+            <div style=" font-size: 32px; color: white">
+                <h2><strong>SelfCare Development</strong></h2>
+                <p>Telecom Solution Development</p>
+                <p>Digital Transformation</p>
+            </div>
+        </div>
+    </div>
+    <div class="containerOut down" style="z-index: 3;">
+        <div class="container"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;">
+            <div style=" font-size: 32px; color: white">
+                <h2><strong>Loyalty Programs</strong></h2>
+                <p>POS & In-store Solutions</p>
+                <p>Customized Loyalty Platform</p>
+            </div>
+        </div>
+    </div>
+    <div class="containerOut down" style="z-index: 4;">
+        <div class="container"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;">
+            <div style=" font-size: 32px; color: white">
+                <h2><strong>WorkForce & Employees</strong></h2>
+                <p>Team Activities & Performance</p>
+                <p>Communication Tool</p>
+            </div>
+        </div>
+    </div>
+    <div class="containerOut down" style="z-index: 5;">
+        <div class="container"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;">
+            <div style=" font-size: 32px; color: white">
+                <h2><strong>Fintech Solutions</strong></h2>
+                <p>MoneyGram Integration</p>
+                <p>POS & Mobile App Development</p>
+            </div>
+        </div>
+    </div>
+    <div class="containerOut down" style="z-index: 6;">
+        <div class="container"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;">
+            <div style=" font-size: 32px; color: white">
+                <h2><strong>E-Commerce in 12 days!</strong></h2>
+                <p>Website & E-Commerce Development</p>
+                <p>QSR Mobile Apps</p>
+            </div>
+        </div>
+    </div>
+    <div class="containerOut down" style="z-index: 7;">
+        <div class="container"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap;">
+            <div style=" font-size: 32px; color: white">
+                <h2><strong>Live Streaming Solutions</strong></h2>
+                <p>Mobile App Development</p>
+                <p>FM Radio & TV</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="containerOut down" style="z-index: 8;">
+        <div class="container footer"
+             style="display: flex;justify-content: flex-start; align-content: center; height: 100%; flex-wrap: wrap; transform: translateY(50px);">
+            <div style="display: flex; flex-direction: column; justify-content: space-around; align-items: center; height: 75%; width: 100%; flex-wrap: wrap;">
+                <h3 class="h2"><b style=" font-size:32px; font-weight: 800; line-height: 1.2;">Let's Transform</b></h3>
+
+                <div style="font-size: 15px; font-weight: 400; line-height: 1.5;">
+                    <p>Like What You See? Tell us about your project.</p>
+                    <p>Web and Mobile Apps development company</p>
+                    <p>We don’t just build your digital business, we accelerate it!</p>
+                </div>
+                <a href="/contact#contactFrom">
+                    <button id="contact"
+                            style="border: 1px solid #000; min-width: 195px; padding: 20px 30px; background: 0 0; position: relative; overflow: hidden">
+                        <span></span><span
+                            class="position-relative">Contact</span>
+                    </button>
+                </a>
+                <div style="display: flex; align-items: center; width: 100%; justify-content: center">
+                    <a class="socialMedia" href="https://www.facebook.com/RACHAD" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg style="display: flex; justify-content: center; align-items: center;"
+                             class="position-relative" width="19.281" height="36" viewBox="0 0 19.281 36">
+                            <path d="M19.627,20.25l1-6.515H14.375V9.507c0-1.782.873-3.52,3.673-3.52h2.842V.44A34.658,34.658,0,0,0,15.846,0C10.7,0,7.332,3.12,7.332,8.769v4.965H1.609V20.25H7.332V36h7.043V20.25Z"
+                                  transform="translate(-1.609)"></path>
+                        </svg>
+                    </a>
+                    <a class="socialMedia" href="https://twitter.com/Rachad" target="_blank" rel="noopener noreferrer">
+                        <svg style="display: flex; justify-content: center; align-items: center;"
+                             class="position-relative" width="36" height="29.239" viewBox="0 0 36 29.239">
+                            <path d="M32.3,10.668c.023.32.023.64.023.959,0,9.754-7.424,20.992-20.992,20.992A20.85,20.85,0,0,1,0,29.307a15.263,15.263,0,0,0,1.782.091,14.776,14.776,0,0,0,9.16-3.152,7.391,7.391,0,0,1-6.9-5.117,9.3,9.3,0,0,0,1.393.114,7.8,7.8,0,0,0,1.942-.251,7.379,7.379,0,0,1-5.916-7.241V13.66A7.431,7.431,0,0,0,4.8,14.6,7.389,7.389,0,0,1,2.513,4.728a20.972,20.972,0,0,0,15.213,7.721,8.329,8.329,0,0,1-.183-1.69A7.385,7.385,0,0,1,30.312,5.711a14.526,14.526,0,0,0,4.683-1.782,7.358,7.358,0,0,1-3.244,4.066A14.791,14.791,0,0,0,36,6.853a15.86,15.86,0,0,1-3.7,3.815Z"
+                                  transform="translate(0 -3.381)"></path>
+                        </svg>
+                    </a>
+                    <a class="socialMedia" href="https://www.instagram.com/rachad.agency/" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg class="position-relative" width="33" height="33" viewBox="0 0 33 33">
+                            <g transform="translate(-1.5 -1.5)">
+                                <path d="M10.5,3h15A7.5,7.5,0,0,1,33,10.5v15A7.5,7.5,0,0,1,25.5,33h-15A7.5,7.5,0,0,1,3,25.5v-15A7.5,7.5,0,0,1,10.5,3Z"
+                                      fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="3"></path>
+                                <path d="M24,17.055A6,6,0,1,1,18.945,12,6,6,0,0,1,24,17.055Z" fill="none" stroke="#000"
+                                      stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                                <path d="M26.25,9.75h0" fill="none" stroke="#000" stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="3"></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <a class="socialMedia" href="https://www.linkedin.com/company/rachad" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg class="position-relative" width="31.5" height="31.499" viewBox="0 0 31.5 31.499">
+                            <path d="M7.051,31.5H.52V10.47H7.051ZM3.782,7.6A3.8,3.8,0,1,1,7.564,3.783,3.814,3.814,0,0,1,3.782,7.6ZM31.493,31.5H24.976V21.263c0-2.44-.049-5.569-3.4-5.569-3.4,0-3.916,2.651-3.916,5.393V31.5H11.142V10.47h6.263v2.869H17.5a6.862,6.862,0,0,1,6.179-3.4c6.609,0,7.824,4.352,7.824,10.005V31.5Z"
+                                  transform="translate(0 -0.001)"></path>
+                        </svg>
+                    </a>
+                    <a class="socialMedia" href="https://www.youtube.com/c/rachad" target="_blank"
+                       rel="noopener noreferrer">
+                        <svg class="position-relative" width="33" height="33" viewBox="-21 -117 682.66672 682">
+                            <path d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0"></path>
+                        </svg>
+                    </a>
+
+                </div>
+                <small style="color: gray;">Copyrights © 2022 - RACHAD ALL RIGHTS RESERVED.</small>
+            </div>
+        </div>
+    </footer>
+</section>
+<script>
+    const s = ["Entertainment", "Fintech", "B2B", "Retail", "QSR", "E-commerce", "Telecom", "Governments", "Insurance"];
+    let index = 0;
+    window.addEventListener("load", () => {
+        function printS() {
+            const print = document.getElementById("print");
+            const x = s[index];
+            const blink = document.getElementById("blink");
+            let charIndex = 0;
+            let id = setInterval(function () {
+                print.innerHTML += x[charIndex];
+                charIndex++;
+                if (charIndex === x.length) {
+                    clearInterval(id);
+                    blink.classList.add("blink")
+                    setTimeout(function () {
+                        blink.classList.remove("blink")
+                        id = setInterval(function () {
+                            print.innerHTML = x.substring(0, charIndex);
+                            charIndex--;
+                            if (charIndex < 0) {
+                                clearInterval(id);
+                                index = (index + 1) % s.length;
+                                printS()
+                            }
+                        }, 100);
+                    }, 1000);
+                }
+            }, 150);
+        }
+
+        printS(index, s)
+    });
+</script>
+<script>
+    let pageIndex = 0;
+    const cOut = document.getElementsByClassName("containerOut");
+    let lastDate = Date.now();
+    let lastWheel = Date.now();
+    update();
+    document.getElementsByClassName("containerSuper")[0].addEventListener("wheel", ev => {
+        ev.preventDefault();
+        if (Date.now() - lastWheel > 50) {
+            scroll1(ev.deltaY);
+        }
+        lastWheel = Date.now();
+    });
+
+    function update() {
+        document.getElementById("radio" + (pageIndex + 1)).checked = true;
+        const key = document.getElementsByClassName("blackMe");
+        const key1 = document.getElementsByClassName("blackLabel");
+        if (pageIndex === cOut.length - 1 || pageIndex === 5) {
+            for (let i = 0; i < key1.length; i++) {
+                key1[i].style.backgroundColor = "#000";
+
+            }
+        } else {
+            for (let i = 0; i < key1.length; i++) {
+                key1[i].style.backgroundColor = "#fff";
+
+            }
+        }
+        if (pageIndex === cOut.length - 1) {
+            for (let i = 0; i < key.length; i++)
+                key[i].style.color = "#000";
+            document.getElementsByClassName("burgers")[0].style.backgroundColor = "#000";
+            document.getElementsByClassName("burgers")[1].style.backgroundColor = "#000";
+            document.getElementsByClassName("burgers")[2].style.backgroundColor = "#000";
+        } else {
+            for (let i = 0; i < key.length; i++)
+                key[i].style.color = "#fff";
+            document.getElementsByClassName("burgers")[0].style.backgroundColor = "#fff";
+            document.getElementsByClassName("burgers")[1].style.backgroundColor = "#fff";
+            document.getElementsByClassName("burgers")[2].style.backgroundColor = "#fff";
+        }
+        for (let i = 0; i < cOut.length; i++) {
+            cOut[i].classList.remove("activePage");
+            cOut[i].classList.remove("down");
+            cOut[i].classList.remove("up");
+            if (i < pageIndex) {
+                cOut[i].classList.add("up");
+            } else if (pageIndex === i) {
+                cOut[i].classList.add("activePage");
+            } else {
+                cOut[i].classList.add("down");
+            }
+        }
+    }
+
+    function scroll1(deltaY) {
+        if (Date.now() - lastDate > 1000) {
+            if (deltaY > 0) {
+                pageIndex = Math.min(pageIndex + 1, cOut.length - 1);
+            } else {
+                pageIndex = Math.max(pageIndex - 1, 0);
+            }
+            lastDate = Date.now();
+            update();
+        }
+    }
+
+    window.addEventListener("touchstart", touchStart);
+    window.addEventListener("touchmove", touchChange);
+    window.addEventListener("touchend", touchEnd);
+    window.addEventListener("touchcancel", touchEnd);
+
+    let oldY = null;
+
+    const sensitivity = 10;
+    const delay = 1000;
+    let scroll = true;
+
+    function touchStart(e) {
+        oldY = e.touches[0].clientY;
+    }
+
+    function touchChange(e) {
+        const deltaTime = Date.now() - lastWheel;
+        const deltaY = e.touches[0].clientY - oldY;
+        oldY = e.touches[0].clientY;
+        if (deltaY > 0 && deltaY >= sensitivity && scroll && deltaTime > delay) {
+            pageIndex = Math.max(0, pageIndex - 1);
+            update();
+            scroll = false;
+            lastWheel = Date.now();
+        } else if (deltaY < 0 && -1 * deltaY >= sensitivity && scroll && deltaTime > delay) {
+            pageIndex = Math.min(cOut.length - 1, pageIndex + 1);
+            update();
+            scroll = false;
+            lastWheel = Date.now()
+        }
+    }
+
+    function touchEnd() {
+        scroll = true;
+    }
+
+
+</script>
+<script>
+    const burger = document.getElementById("burger");
+    const burgers = document.getElementsByClassName("burgers")
+    const navBar = document.getElementById("navBar");
+    burger.onclick = function () {
+        for (let i = 0; i < burgers.length; i++) {
+            burgers[i].classList.toggle("active");
+        }
+        navBar.classList.toggle("active")
+        document.getElementsByClassName("blackMe")[0].classList.toggle("active");
+
+    }
+</script>
+</body>
+
+</html>
