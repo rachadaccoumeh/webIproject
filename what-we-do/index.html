@@ -5,34 +5,485 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>What We Do</title>
+    <title>What we do</title>
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <style>
+        body {
+            overflow: auto;
+
+        }
+
         a {
             color: black;
+        }
+
+        #burger span {
+            background-color: black;
+        }
+
+        .whatWeDo {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .whatWeDo .leftSide {
+            position: relative;
+            padding: 0 50px;
+        }
+
+        .whatWeDo .stickyBox {
+            margin-top: 120px;
+            position: sticky;
+            top: 40%;
+        }
+
+        .whatWeDo .stickyBox h4 {
+            position: relative;
+            font-weight: lighter;
+            white-space: nowrap;
+            margin-bottom: 25px;
+            width: 100%;
+            text-align: right;
+            color: gray;
+            transition: color 300ms linear;
+        }
+
+        .whatWeDo .stickyBox h4.active {
+            color: #000;
+            font-weight: 500;
+        }
+
+        .whatWeDo .stickyBox h4 span {
+            position: absolute;
+            top: 50%;
+            right: -125px;
+            transform: translate(-50%, 100%);
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: gray;
+            transition: all 200ms linear;
+
+        }
+
+        .whatWeDo .stickyBox h4.active span {
+            background: #fff;
+            width: 100px;
+            right: -200px;
+        }
+
+        .whatWeDo .rightSide {
+            background: linear-gradient(to bottom, #2d2e32, #0d0f13);
+            box-sizing: border-box;
+            padding: 80px 100px;
+        }
+
+        .whatWeDo .serviceBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            margin: 30px 0;
+        }
+
+        .whatWeDo .txtBox {
+            max-width: 40%;
+            box-sizing: border-box;
+            margin-right: 40px;
+            color: gray;
+            transition: color 300ms linear;
+        }
+
+        .whatWeDo .serviceBox.active .txtBox {
+            color: #fff;
+        }
+
+        .whatWeDo .txtBox .boxNo {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .whatWeDo .txtBox h5 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .whatWeDo .txtBox .txt {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .whatWeDo .txtBox .list p {
+            margin-bottom: 5px;
+        }
+        .whatWeDo .imgBox img {
+            height: 100%;
+            width: auto;
+            transform: scale(0.7);
+        }
+        @media(max-width: 1200px){
+            .whatWeDo .leftSide{
+                padding: 0 25px;
+            }
+            .whatWeDo .leftSide h4 span{
+                right:-100px
+            }
+            .whatWeDo .leftSide h4.active span{
+                right:-150px
+            }
+        }
+        @media (max-width: 1100px) {
+            .whatWeDo .imgBox img {
+                transform: scale(1);
+            }
+            .whatWeDo .leftSide{
+                width: 0;
+                margin: 0;
+                padding: 0;
+            }
+            .whatWeDo .leftSide h4{
+                color: transparent;
+            }
+            .whatWeDo .leftSide h4.active{
+                color: transparent;
+            }
+            .whatWeDo .leftSide h4 span{
+                right:-75px
+            }
+            .whatWeDo .leftSide h4.active span{
+                right:-150px
+            }
+        }
+        @media (max-width: 800px) {
+            .whatWeDo .serviceBox{
+                flex-direction: column;
+
+            }
+            .whatWeDo .rightSide{
+                padding:30px 50px;
+            }
+            .whatWeDo .serviceBox{
+                margin: 60px 0;
+            }
+            .whatWeDo .serviceBox .txtBox{
+                margin-bottom: 50px;
+            }
+            .whatWeDo .imgBox img{
+                transform:scale(0.9);
+            }
         }
     </style>
 </head>
 <body>
-<div style="width: 100%; position: fixed; z-index: 1000;">
+<div style="width: 100%;  z-index: 1000;">
     <nav class="container" id="navigation-fixed-top">
-        <a href="http://tedmob.com">
+        <a href="..">
             <h2>Rachad</h2>
         </a>
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="http://tedmob.com/work">WORK</a></li>
-            <li class="list-inline-item"><a href="http://tedmob.com/agency">AGENCY</a></li>
-            <li class="list-inline-item"><a href="http://tedmob.com/what-we-do">WHAT WE DO</a></li>
-            <li class="list-inline-item"><a href="http://tedmob.com/solutions">SOLUTIONS</a></li>
-            <li class="list-inline-item"><a href="http://tedmob.com/blog">BLOG</a></li>
-            <li class="list-inline-item"><a style="margin-right: 0" href="http://tedmob.com/contact">CONTACT</a></li>
+            <li class="list-inline-item"><a href="../agency">WORK</a></li>
+            <li class="list-inline-item"><a href="../what-we-do">WHAT WE DO</a></li>
+            <li class="list-inline-item"><a style="margin-right: 0" href="../contact">CONTACT</a></li>
         </ul>
-        <div id="burger" style="display: none">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div id="burger">
+            <span class="burgers top"></span>
+            <span class="burgers middle"></span>
+            <span class="burgers bottom"></span>
         </div>
     </nav>
 </div>
+<aside id="navBar" style="margin-top: 85px">
+    <ul class="list-inline">
+        <li><a class="blackMe" href="../agency">WORK</a></li>
+        <li><a class="blackMe" href="../what-we-do">WHAT WE DO</a></li>
+        <li><a class="blackMe" href="../contact">CONTACT</a></li>
+        <li>
+            <div style="display: flex; align-items: center; width: 100%; justify-content: center">
+                <a class="socialMedia" href="https://www.facebook.com/RACHAD" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg style="display: flex; justify-content: center; align-items: center;"
+                         class="position-relative" width="19.281" height="36" viewBox="0 0 19.281 36">
+                        <path d="M19.627,20.25l1-6.515H14.375V9.507c0-1.782.873-3.52,3.673-3.52h2.842V.44A34.658,34.658,0,0,0,15.846,0C10.7,0,7.332,3.12,7.332,8.769v4.965H1.609V20.25H7.332V36h7.043V20.25Z"
+                              transform="translate(-1.609)"></path>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://twitter.com/Rachad" target="_blank" rel="noopener noreferrer">
+                    <svg style="display: flex; justify-content: center; align-items: center;"
+                         class="position-relative" width="36" height="29.239" viewBox="0 0 36 29.239">
+                        <path d="M32.3,10.668c.023.32.023.64.023.959,0,9.754-7.424,20.992-20.992,20.992A20.85,20.85,0,0,1,0,29.307a15.263,15.263,0,0,0,1.782.091,14.776,14.776,0,0,0,9.16-3.152,7.391,7.391,0,0,1-6.9-5.117,9.3,9.3,0,0,0,1.393.114,7.8,7.8,0,0,0,1.942-.251,7.379,7.379,0,0,1-5.916-7.241V13.66A7.431,7.431,0,0,0,4.8,14.6,7.389,7.389,0,0,1,2.513,4.728a20.972,20.972,0,0,0,15.213,7.721,8.329,8.329,0,0,1-.183-1.69A7.385,7.385,0,0,1,30.312,5.711a14.526,14.526,0,0,0,4.683-1.782,7.358,7.358,0,0,1-3.244,4.066A14.791,14.791,0,0,0,36,6.853a15.86,15.86,0,0,1-3.7,3.815Z"
+                              transform="translate(0 -3.381)"></path>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://www.instagram.com/rachad.agency/" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="position-relative" width="33" height="33" viewBox="0 0 33 33">
+                        <g transform="translate(-1.5 -1.5)">
+                            <path d="M10.5,3h15A7.5,7.5,0,0,1,33,10.5v15A7.5,7.5,0,0,1,25.5,33h-15A7.5,7.5,0,0,1,3,25.5v-15A7.5,7.5,0,0,1,10.5,3Z"
+                                  fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="3"></path>
+                            <path d="M24,17.055A6,6,0,1,1,18.945,12,6,6,0,0,1,24,17.055Z" fill="none" stroke="#000"
+                                  stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                            <path d="M26.25,9.75h0" fill="none" stroke="#000" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="3"></path>
+                        </g>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://www.linkedin.com/company/rachad" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="position-relative" width="31.5" height="31.499" viewBox="0 0 31.5 31.499">
+                        <path d="M7.051,31.5H.52V10.47H7.051ZM3.782,7.6A3.8,3.8,0,1,1,7.564,3.783,3.814,3.814,0,0,1,3.782,7.6ZM31.493,31.5H24.976V21.263c0-2.44-.049-5.569-3.4-5.569-3.4,0-3.916,2.651-3.916,5.393V31.5H11.142V10.47h6.263v2.869H17.5a6.862,6.862,0,0,1,6.179-3.4c6.609,0,7.824,4.352,7.824,10.005V31.5Z"
+                              transform="translate(0 -0.001)"></path>
+                    </svg>
+                </a>
+                <a class="socialMedia" href="https://www.youtube.com/c/rachad" target="_blank"
+                   rel="noopener noreferrer">
+                    <svg class="position-relative" width="33" height="33" viewBox="-21 -117 682.66672 682">
+                        <path d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0"></path>
+                    </svg>
+                </a>
+
+            </div>
+        </li>
+    </ul>
+</aside>
+<header style="height: 50%; margin-top: 100px; margin-bottom: 100px ">
+    <div class="container"
+         style="display: flex;justify-content: flex-start; align-content: center; flex-direction: column; ">
+        <strong style="font-weight: 800; font-size: 40px">Digital Experience Matters</strong>
+        <p style="font-weight: 500; font-size: 28px; width: 720px">From award-winning Mobile App Development to elegant,
+                                                                   seamless Web & E-commerce development, we build
+                                                                   DIGITAL
+                                                                   products driven by strategy, design and
+                                                                   technology.</p>
+    </div>
+</header>
+<div class="whatWeDo">
+    <div class="leftSide">
+        <div class="stickyBox">
+            <h4 class="serviceTitle active">EXPERIENCE DESIGN<span></span></h4>
+            <h4 class="serviceTitle">TECHNOLOGY & DEVELOPMENT<span></span></h4>
+            <h4 class="serviceTitle">INNOVATION<span></span></h4>
+            <h4 class="serviceTitle">STRATEGY & PLANNING<span></span></h4>
+            <h4 class="serviceTitle">GROWTH MARKETING<span></span></h4>
+        </div>
+    </div>
+    <div class="rightSide">
+        <section class="serviceBox active">
+            <div class="txtBox">
+                <p class="boxNo">01</p>
+                <h5>EXPERIENCE DESIGN</h5>
+                <p class="txt">We ensure a user-friendly Interface because we understand that only a perfect Digital
+                               Solution Design
+                               can
+                               Lead to a perfect Development.</p>
+                <div class="list">
+                    <p>-User Experience Design&nbsp;UX</p>
+                    <p>-User Interface Design UI</p>
+                    <p>-Responsive Design</p>
+                    <p>-E-commerce Design</p>
+                    <p>-Brand Creation</p>
+                    <p>-Digital product design</p>
+                    <p>-Information Architecture&nbsp;</p>
+                    <p>-Prototyping &amp; Optimization</p>
+                </div>
+            </div>
+            <div class="imgBox">
+                <img src="../storage/services/1086806959.jpg">
+            </div>
+        </section>
+        <section class="serviceBox">
+            <div class="txtBox">
+                <p class="boxNo">02</p>
+                <h5>TECHNOLOGY &amp; DEVELOPMENT</h5>
+                <p class="txt">No matter the solution, our developers and engineers combine agile product development
+                               with the
+                               latest
+                               frameworks to reduce your technical debt and build scalable solutions that work for your
+                               users and
+                               your
+                               business. We create intuitive, simple, and engaging experiences for all users, on any
+                               screen size –
+                               and
+                               from any device</p>
+                <div class="list">
+                    <p>-Solutions Development</p>
+                    <p>-Website Development</p>
+                    <p>-iOS &amp; Android Mobile Development</p>
+                    <p>-eCommerce Development</p>
+                    <p>-Loyalty Programs Development</p>
+                    <p>-API &amp; Platform Build</p>
+                    <p>-CMS Development&nbsp;</p>
+                    <p>-DevOps</p>
+                    <p>-Maintenance &amp; SLAs</p>
+                    <p>-Augmented Reality</p>
+                    <p>-Unity Development</p>
+                </div>
+            </div>
+            <div class="imgBox">
+                <img src="../storage/services/service4-906941066.png">
+            </div>
+        </section>
+        <section class="serviceBox">
+            <div class="txtBox">
+                <p class="boxNo">03</p>
+                <h5>INNOVATION</h5>
+                <p class="txt">We love experimenting with emerging tech, which ensures to turn validated requirements
+                               into brilliant
+                               experiences. Our developers and engineers combine agile product development with the
+                               latest
+                               frameworks to
+                               deploy smarter experiences faster than the competition.</p>
+                <div class="list">
+                    <p>-Innovation Consultancy</p>
+                    <p>-Artificial Intelligence</p>
+                    <p>-Emerging Technologies</p>
+                    <p>-Machine learning</p>
+                    <p>-Internet of Things</p>
+                    <p>-Chatbots</p>
+                    <p>-CarPlay/Alexa/Google Home</p>
+                    <p>-SmartTV, Apple TV, Android TV</p>
+                </div>
+            </div>
+            <div class="imgBox">
+                <img src="../storage/services/service5-417235367.png">
+            </div>
+        </section>
+        <section class="serviceBox">
+            <div class="txtBox">
+                <p class="boxNo">04</p>
+                <h5>STRATEGY &amp; PLANNING</h5>
+                <p class="txt">We deliver rich &amp; high quality Services by combining Business requirements and Core
+                               Coding for
+                               best
+                               Customized Digital Transformation Solutions</p>
+                <div class="list">
+                    <p>-Customer Experience Strategy</p>
+                    <p>-Research, Analytics &amp; Insights</p>
+                    <p>-Brand &amp; Positioning Strategy</p>
+                    <p>-User / Audience Definition</p>
+                    <p>-Technical Scoping</p>
+                    <p>-Prototype &amp; Validation sprints</p>
+                    <p>-Product Requirements Development</p>
+                    <p>-Information Architecture</p>
+                </div>
+            </div>
+            <div class="imgBox">
+                <img src="../storage/services/1448053780.png">
+            </div>
+        </section>
+        <section class="serviceBox">
+            <div class="txtBox">
+                <p class="boxNo">05</p>
+                <h5>GROWTH MARKETING</h5>
+                <p class="txt">Growth maximizes the ROI on digital products. We help you to find your audience and
+                               attract new users
+                               with targeted growth plans. We dive into the data to understand how they interact with
+                               your products
+                               and
+                               identify opportunities to improve engagement and drive retention.</p>
+                <div class="list">
+                    <p>-Media Planning &amp; Buying</p>
+                    <p>-Product Launch Campaigns</p>
+                    <p>-Performance Optimization</p>
+                    <p>-Content Creation &amp; Planning</p>
+                    <p>-Growth Hacking</p>
+                    <p>-App Store Optimization</p>
+                    <p>-SEO &amp; Paid Search</p>
+                    <p>-Targeted User Acquisition</p>
+                    <p>-Campaign ROI Monitoring &amp; Reporting</p>
+                </div>
+            </div>
+            <div class="imgBox">
+                <img src="../storage/services/273013170.png">
+            </div>
+        </section>
+    </div>
+</div>
+<footer style="margin-top: 100px; margin-bottom: 50px">
+    <div style=" width: 100%; text-align: center">
+        <div style="display: flex; align-items: center; width: 100%; justify-content: center">
+            <a class="socialMedia" href="https://www.facebook.com/RACHAD" target="_blank"
+               rel="noopener noreferrer">
+                <svg style="display: flex; justify-content: center; align-items: center;"
+                     class="position-relative" width="19.281" height="36" viewBox="0 0 19.281 36">
+                    <path d="M19.627,20.25l1-6.515H14.375V9.507c0-1.782.873-3.52,3.673-3.52h2.842V.44A34.658,34.658,0,0,0,15.846,0C10.7,0,7.332,3.12,7.332,8.769v4.965H1.609V20.25H7.332V36h7.043V20.25Z"
+                          transform="translate(-1.609)"></path>
+                </svg>
+            </a>
+            <a class="socialMedia" href="https://twitter.com/Rachad" target="_blank" rel="noopener noreferrer">
+                <svg style="display: flex; justify-content: center; align-items: center;"
+                     class="position-relative" width="36" height="29.239" viewBox="0 0 36 29.239">
+                    <path d="M32.3,10.668c.023.32.023.64.023.959,0,9.754-7.424,20.992-20.992,20.992A20.85,20.85,0,0,1,0,29.307a15.263,15.263,0,0,0,1.782.091,14.776,14.776,0,0,0,9.16-3.152,7.391,7.391,0,0,1-6.9-5.117,9.3,9.3,0,0,0,1.393.114,7.8,7.8,0,0,0,1.942-.251,7.379,7.379,0,0,1-5.916-7.241V13.66A7.431,7.431,0,0,0,4.8,14.6,7.389,7.389,0,0,1,2.513,4.728a20.972,20.972,0,0,0,15.213,7.721,8.329,8.329,0,0,1-.183-1.69A7.385,7.385,0,0,1,30.312,5.711a14.526,14.526,0,0,0,4.683-1.782,7.358,7.358,0,0,1-3.244,4.066A14.791,14.791,0,0,0,36,6.853a15.86,15.86,0,0,1-3.7,3.815Z"
+                          transform="translate(0 -3.381)"></path>
+                </svg>
+            </a>
+            <a class="socialMedia" href="https://www.instagram.com/rachad.agency/" target="_blank"
+               rel="noopener noreferrer">
+                <svg class="position-relative" width="33" height="33" viewBox="0 0 33 33">
+                    <g transform="translate(-1.5 -1.5)">
+                        <path d="M10.5,3h15A7.5,7.5,0,0,1,33,10.5v15A7.5,7.5,0,0,1,25.5,33h-15A7.5,7.5,0,0,1,3,25.5v-15A7.5,7.5,0,0,1,10.5,3Z"
+                              fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="3"></path>
+                        <path d="M24,17.055A6,6,0,1,1,18.945,12,6,6,0,0,1,24,17.055Z" fill="none" stroke="#000"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+                        <path d="M26.25,9.75h0" fill="none" stroke="#000" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="3"></path>
+                    </g>
+                </svg>
+            </a>
+            <a class="socialMedia" href="https://www.linkedin.com/company/rachad" target="_blank"
+               rel="noopener noreferrer">
+                <svg class="position-relative" width="31.5" height="31.499" viewBox="0 0 31.5 31.499">
+                    <path d="M7.051,31.5H.52V10.47H7.051ZM3.782,7.6A3.8,3.8,0,1,1,7.564,3.783,3.814,3.814,0,0,1,3.782,7.6ZM31.493,31.5H24.976V21.263c0-2.44-.049-5.569-3.4-5.569-3.4,0-3.916,2.651-3.916,5.393V31.5H11.142V10.47h6.263v2.869H17.5a6.862,6.862,0,0,1,6.179-3.4c6.609,0,7.824,4.352,7.824,10.005V31.5Z"
+                          transform="translate(0 -0.001)"></path>
+                </svg>
+            </a>
+            <a class="socialMedia" href="https://www.youtube.com/c/rachad" target="_blank"
+               rel="noopener noreferrer">
+                <svg class="position-relative" width="33" height="33" viewBox="-21 -117 682.66672 682">
+                    <path d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0"></path>
+                </svg>
+            </a>
+
+        </div>
+        <small style="color: gray; ">Copyrights © 2022 - RACHAD ALL RIGHTS RESERVED.</small>
+    </div>
+</footer>
+<script>
+    const serviceBoxes = document.getElementsByClassName("serviceBox");
+    const serviceTitles = document.getElementsByClassName("serviceTitle");
+    const burger = document.getElementById("burger");
+    const burgers = document.getElementsByClassName("burgers")
+    const navBar = document.getElementById("navBar");
+    burger.onclick = function () {
+        for (let i = 0; i < burgers.length; i++) {
+            burgers[i].classList.toggle("active");
+        }
+        navBar.classList.toggle("active")
+    }
+    window.addEventListener("scroll", function () {
+        let bb = []
+        for (let i = 0; i < serviceBoxes.length; i++) {
+            bb.push(serviceBoxes[i].getBoundingClientRect().top - Math.floor(window.innerHeight / 2));
+        }
+        bb[0] -= 1000;
+        let index = 0;
+        for (let i = 0; i < bb.length; i++) {
+            if (bb[i] <= 0) {index = i;}
+        }
+        for (let i = 0; i < serviceBoxes.length; i++) {
+            serviceTitles[i].classList.remove("active");
+            serviceBoxes[i].classList.remove("active");
+        }
+        serviceBoxes[index].classList.add("active");
+        serviceTitles[index].classList.add("active");
+    });
+
+</script>
 </body>
 </html>

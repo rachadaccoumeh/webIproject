@@ -94,6 +94,10 @@ ul {
     transform: translateY(+5.5px) rotate(-45deg);
     background-color: black !important;
 }
+ul li {
+    display: block;
+    margin: 20px;
+}
 
 .blackMe.active h2 {
     color: black;
