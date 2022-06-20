@@ -121,60 +121,75 @@
         .whatWeDo .txtBox .list p {
             margin-bottom: 5px;
         }
+
         .whatWeDo .imgBox img {
             height: 100%;
             width: auto;
             transform: scale(0.7);
         }
-        @media(max-width: 1200px){
-            .whatWeDo .leftSide{
+
+        @media (max-width: 1200px) {
+            .whatWeDo .leftSide {
                 padding: 0 25px;
             }
-            .whatWeDo .leftSide h4 span{
-                right:-100px
+
+            .whatWeDo .leftSide h4 span {
+                right: -100px
             }
-            .whatWeDo .leftSide h4.active span{
-                right:-150px
+
+            .whatWeDo .leftSide h4.active span {
+                right: -150px
             }
         }
+
         @media (max-width: 1100px) {
             .whatWeDo .imgBox img {
                 transform: scale(1);
             }
-            .whatWeDo .leftSide{
+
+            .whatWeDo .leftSide {
                 width: 0;
                 margin: 0;
                 padding: 0;
             }
-            .whatWeDo .leftSide h4{
+
+            .whatWeDo .leftSide h4 {
                 color: transparent;
             }
-            .whatWeDo .leftSide h4.active{
+
+            .whatWeDo .leftSide h4.active {
                 color: transparent;
             }
-            .whatWeDo .leftSide h4 span{
-                right:-75px
+
+            .whatWeDo .leftSide h4 span {
+                right: -75px
             }
-            .whatWeDo .leftSide h4.active span{
-                right:-150px
+
+            .whatWeDo .leftSide h4.active span {
+                right: -150px
             }
         }
+
         @media (max-width: 800px) {
-            .whatWeDo .serviceBox{
+            .whatWeDo .serviceBox {
                 flex-direction: column;
 
             }
-            .whatWeDo .rightSide{
-                padding:30px 50px;
+
+            .whatWeDo .rightSide {
+                padding: 30px 50px;
             }
-            .whatWeDo .serviceBox{
+
+            .whatWeDo .serviceBox {
                 margin: 60px 0;
             }
-            .whatWeDo .serviceBox .txtBox{
+
+            .whatWeDo .serviceBox .txtBox {
                 margin-bottom: 50px;
             }
-            .whatWeDo .imgBox img{
-                transform:scale(0.9);
+
+            .whatWeDo .imgBox img {
+                transform: scale(0.9);
             }
         }
     </style>
@@ -474,7 +489,9 @@
         bb[0] -= 1000;
         let index = 0;
         for (let i = 0; i < bb.length; i++) {
-            if (bb[i] <= 0) {index = i;}
+            if (bb[i] <= 0) {
+                index = i;
+            }
         }
         for (let i = 0; i < serviceBoxes.length; i++) {
             serviceTitles[i].classList.remove("active");
