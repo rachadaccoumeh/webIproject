@@ -1,2 +1,2 @@
 # webIproject
-- you can check the website on [rachad.ml](rachad.ml)
+- you can check the website on [rachad.ml](www.rachad.ml)
