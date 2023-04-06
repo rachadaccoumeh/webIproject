@@ -22,6 +22,8 @@ Additional features of the website include:
 - Interactive testimonials slider
 - Form validation for contact form
 ## Preview
+- you can check the website on [rachad.ml](http://rachad.ml/?i=1)
+
 ![Screenshot of Cuisine website](./README_images/2023-04-06%2020-21-37.gif)
 ![Screenshot of Cuisine website](./README_images/2023-04-06%2020-22-22.gif)
 ![Screenshot of Cuisine website](./README_images/2023-04-06%2020-23-01.gif)
