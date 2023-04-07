@@ -24,11 +24,11 @@ Additional features of the website include:
 ## Preview
 - you can check the website on [rachad.ml](http://rachad.ml/?i=1)
 
-![Screenshot of Cuisine website](./README_images/2023-04-06%2020-21-37.gif)
-![Screenshot of Cuisine website](./README_images/2023-04-06%2020-22-22.gif)
-![Screenshot of Cuisine website](./README_images/2023-04-06%2020-23-01.gif)
-![Screenshot of Cuisine website](./README_images/2023-04-06%2020-23-15.gif)
-![Screenshot of Cuisine website](./README_images/2023-04-06%2021-58-49.gif)
+![Screenshot of Cuisine website](./README_images/ezgif.com-optimize.gif)
+![Screenshot of Cuisine website](./README_images/ezgif.com-optimize%20(1).gif)
+![Screenshot of Cuisine website](./README_images/ezgif.com-optimize%20(2).gif)
+![Screenshot of Cuisine website](./README_images/ezgif.com-optimize%20(3).gif)
+![Screenshot of Cuisine website](./README_images/ezgif.com-optimize%20(4).gif)
 
 ## Technologies Used
 The project was built using the following technologies:
